@@ -1,7 +1,9 @@
 #! /bin/bash
+# git add, commit and push all at the same time.
 
 function addcommitpush () {
 
+# dtermine current branch
 current=$(git branch | grep "*" | cut -b 3-)
 
 #wrap inline var in single quotes and store in var called message
@@ -10,9 +12,9 @@ message=\'"$@"\'
 git add -A && git commit -a -m "$message"
 
 echo "Where to push?" | lolcat
-#read and create var to store a push branchname
+#prefill current branch and prompt var to store a push branchname
 read -i "$current" -e branch
-#last chance before push
+#last chance before push -- prefill yes
 echo "You sure you wanna push? (y/n)" | lolcat
 read -i "y" -e yn
 
