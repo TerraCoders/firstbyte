@@ -9,8 +9,8 @@
 # The first usage would reset to the third commit in your git log history.
 # The second usage would reset to the second commit in your git log history.
 
-# if inline var equals last create new var and give value of two
-# otherwise, new var equals inline var
+# if inline var equals last create num var and give value of two
+# otherwise, num var equals inline var
 if [ "$1" = last ]; then
   num="2"
 else
