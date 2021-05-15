@@ -7,11 +7,7 @@
 # $ ./dimmer 10
 
 # Take whole numbers and convert to decimal for xrandr
-if [ "$1" = 10 ]; then
-  percent="1"
-else
-  percent="0.$1"
-fi
+[ "$1" = 10 ] && percent="1" || percent="0.$1"
 
 # adjust brightness
 xrandr --output DP-2 --brightness "$percent" && xrandr --output HDMI-1 --brightness "$percent"
@@ -24,10 +20,8 @@ else
 fi
 
 # Optional -  double check settings
-xrandr --verbose | grep Brightness
-xrandr --verbose | grep Gamma
+echo "$(xrandr --verbose | grep Brightness)" | tail -n1
+echo "$(xrandr --verbose | grep Gamma)" | tail -n1
 
 # Optional
-if [ "$1" != 10 ]; then
-  cowsay "Stayin' up late, huh? Or maybe just pretneding to be a hacker?" | lolcat
-fi
+[ "$1" != 10 ] && echo "Stayin' up late, huh? Or maybe just pretneding to be a hacker?" | lolcat
