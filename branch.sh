@@ -1,4 +1,5 @@
 #! /bin/bash
+# https://terracoders.com/blog/bash-simple-script-checking-out-new-git-branches
 # An easy script for checking out new branches with git.
 # The script asks for a new branch name, identifies the current branch
 # and then asks whether you'd like to create the new branch for the (c)urrent branch
