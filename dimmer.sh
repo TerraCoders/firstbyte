@@ -1,4 +1,5 @@
 #! /bin/bash
+# https://terracoders.com/blog/bash-simple-script-changing-display-brightness-xrandr
 # Script for adjusting display brightness and gamma. Feed the script a value
 # between 1-10 to affect brightness. Gamma is a fixed night mode value with reduced
 # blue gamma.
