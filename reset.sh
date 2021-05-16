@@ -1,4 +1,5 @@
 #! /bin/bash
+# https://terracoders.com/blog/bash-simple-script-automating-git-reset
 # Script for grabbing a commit from git log and passing the hash to git reset
 # Usage: you need to know how many commits back you'd like to reset to. You
 # can pass that number as a variable to the script or simply reset to the last
