@@ -1,4 +1,5 @@
 #! /bin/bash
+# https://terracoders.com/blog/git-add-commit-and-push-all-once-bash-function
 # git add, commit and push all at the same time.
 
 function addcommitpush () {
