@@ -16,3 +16,6 @@ file="$(basename $2)"
 
 [ "$1" == remote ] && scp "$2"  "$remote"/"$file"
 [ "$1" == device ] && scp "$2" "$device"/"$file"
+
+# For a version of this script that copies folders/directories, see
+# https://github.com/TerraCoders/firstbyte/blob/master/scpr.sh
