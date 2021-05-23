@@ -12,4 +12,4 @@ line=$(awk '/error_level/{print NR}' /pathto/settings.php)
 on="\$config['system.logging']['error_level'] = 'verbose';"
 
 sed -i "${line}d" /pathto/settings.php && sed -i "${line}i ${on}" /pathto/settings.php
-echo "Verbose error logging is now on!" | lolcat
+echo "Verbose error logging is now on!"
