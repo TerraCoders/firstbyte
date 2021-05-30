@@ -11,6 +11,3 @@ elif [ "$1" = h ]; then
 else
   stat -c "%a %A %n" "$1"
 fi
-
-
-#[ "$1" = h ] && stat -c "%a %A %n" .* * || [ -z ${1} ] && stat -c "%a %A %n" * || stat -c "%a %A %n" "$1"
