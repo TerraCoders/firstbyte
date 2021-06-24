@@ -2,7 +2,7 @@
 # Script to determine whether an application is running; if running bring the window to the front
 # otherwise open the application independent of the terminal. This only works with applications
 # that can be run from the command line. $1 arg is the name of the application you'd like to fetch.
-#
+
 # Usage example:
 # ./get.sh firefox
 # ./get.sh gitkraken
