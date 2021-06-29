@@ -5,9 +5,11 @@
 
 # Usage example:
 # ./get.sh firefox
+# ./get.sh ff
 # ./get.sh gitkraken
+# ./get.sh gk
 
-# create a few aliases for often used apps and translate to $2 value
+# create a few aliases for often used apps and translate to $alias value
 if [ "$1" == ff ]; then
   alias='firefox'
 elif [ "$1" == gk ]; then
