@@ -34,6 +34,8 @@ ff="$(wmctrl -l | grep Firefox)"
 multi="$(echo "$ff" | sed -n '2 p')"
 
 # parse down to window name only
+# maybe double check that cut is removing the right number of bytes for your shell
+# output should be window names ONLY!!
 all="$(echo "$ff" | cut -b 27-)"
 
 # and number the output
@@ -48,6 +50,7 @@ if [ "$1" == ff ] && [ "$isopen" != "" ] && [ "$multi" != "" ]; then
   read -p "Enter a number: " num
 
   # search list for num with grep and parse again
+  # might need to double check cut again
   window="$(echo "$list" | grep $num | cut -b 8-)"
 
   # use parsed window name to get a window ID with xdotool
