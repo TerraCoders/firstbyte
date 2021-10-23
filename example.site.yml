@@ -1,0 +1,29 @@
+# File: example.site.yml
+
+
+# Application 'example', environment 'local'.
+local:
+  # local drupal root:
+  root: /var/www/example
+  # some local uri (i.e., what you have in /etc/hosts for your local site):
+  uri: localuri
+  # whatever user apache runs as:
+  user: www-data
+  # path to your local site files:
+  paths:
+   - files: /var/www/example/sites/default/files
+
+
+# Application 'example', environment 'prod'.
+prod:
+  # host name (can be same as uri):
+  host: remoteuri.com
+  # remote user name (i.e., user name used when logging in via ssh):
+  user: remoteuser
+  # remote drupal root:
+  root: /home/remoteuser/public_html/example
+  # remote uri
+  uri: remoteuri.com
+  # path to files on remote
+  paths:
+   - files: /home/remoteuser/public_html/example/sites/default/files    
