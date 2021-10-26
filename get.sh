@@ -34,8 +34,10 @@ ff="$(wmctrl -l | grep Firefox)"
 multi="$(echo "$ff" | sed -n '2 p')"
 
 # parse down to window name only
-# maybe double check that cut is removing the right number of bytes for your shell
+# *********************************************************************************
+# MUST double check that cut is removing the right number of bytes for your shell!!
 # output should be window names ONLY!!
+# *********************************************************************************
 all="$(echo "$ff" | cut -b 27-)"
 
 # and number the output
