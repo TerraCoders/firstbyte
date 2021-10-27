@@ -64,7 +64,7 @@ if [ "$1" == ff ] && [ "$isopen" != "" ] && [ "$multi" != "" ]; then
 else
 
   # if application has a win open, bring to front (also redirect STDERR ouput to /dev/null). Else, open the requested app
-  [ "$isopen" != "" ] && xdotool search --desktop 0 $alias windowactivate 2> /dev/null || $alias </dev/null &>/dev/null &
+  [ "$isopen" != "" ] && xdotool search --onlyvisible --name $alias windowactivate 2> /dev/null || $alias </dev/null &>/dev/null &
   exit
 
 fi
