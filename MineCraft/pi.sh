@@ -28,7 +28,7 @@ if [ -f "$1" ]; then
   # remove path and isolate file name
   file="$(basename $1)"
   # use scp to send file
-  scp "$1" "$destination"/"$file" && echo "$file has been sent to $destination."
+  scp "$1" "$destination"/"$file" && jp2a ~/Scripts/src/minecraft.jpg --invert --term-fit | lolcat && cowsay "$file has been sent to $destination." | lolcat
 
 else
 
