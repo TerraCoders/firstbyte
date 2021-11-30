@@ -17,7 +17,7 @@ echo "Enter the case-sensitive name (without .jar ending):"
 
 read plugin
 
-echo "You are about to remove the $plugin folder and the $file file."
+echo "You are about to remove the $plugin folder and the $plugin.jar file."
 echo "*****************************************************"
 echo "* This is a destructive action; you cannot undo it! *" | lolcat
 echo "*****************************************************"
