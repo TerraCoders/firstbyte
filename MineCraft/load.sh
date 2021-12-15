@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# CAUTION: NOT FULLY TESTED
+
 # This is not a complete script. It's intended for use with a larger script allowing users to swap worlds on a MC server.
 # It can be used as is, however, to load a new world on your server.
 #
@@ -8,7 +10,8 @@
 #
 # The minecraft world is set in the server.properties file. This script finds that line and rewrites it
 # with read variabled defined by the script user. You can use this script to load an existing world on your server
-# or create a new world.
+# or create a new world. IMPORTANT: be sure to stop MC-Sever services before using this script.
+# Restarting services should load the updated server.properties file
 
 echo "Name of world would you like to load/create? (case-sensitive)"
 read world
