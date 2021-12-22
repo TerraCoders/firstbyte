@@ -10,8 +10,10 @@
 # USAGE #
 #########
 
-# example: ./pi.sh ~/path/to/plugin.jar
-# example: ./pi.sh plugin.jar
+# example: ./pi.sh ~/path/to/somefile.jar
+# example: ./pi.sh somefile.txt
+
+# IF USING TO TRANSFER PLUGINS OR SERVER FILES, BE SURE TO RESTART MC-SERVER SERVICE AFTER USE
 
 # Local or remote RPi address
 # Change [user] to whatever user you log in as
