@@ -8,6 +8,8 @@
 # USAGE:
 # ./load.sh
 #
+# DON'T FORGET TO RESTART MC-SERVER SERVICE AFTER USE!
+#
 # The minecraft world is set in the server.properties file. This script finds that line and rewrites it
 # with read variabled defined by the script user. You can use this script to load an existing world on your server
 # or create a new world. IMPORTANT: be sure to stop MC-Sever services before using this script.
