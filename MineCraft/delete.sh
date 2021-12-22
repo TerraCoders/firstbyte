@@ -1,8 +1,8 @@
 #! /bin/bash
 
 # Script to automate deletion of server plugins on a remote MineCraft Server.
-# You will need to know your MC Server's IP address, user and password; the plugins  
-# folder location also assumes you are using the Java (paper.jar) version of the server 
+# You will need to know your MC Server's IP address, user and password; the plugins
+# folder location also assumes you are using the Java (paper.jar) version of the server
 # (in my case built on balenaCloud/balenaOS). Update the script for these items accordingly.
 
 # USAGE: ./delete.sh
