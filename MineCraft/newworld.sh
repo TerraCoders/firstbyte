@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# SCRIPT NOT YET TESTED...
+# SCRIPT NOT FULY TESTED...
 
 # Script for automating creation of new worlds on your MC Server (paper.jar)
 # To create a new world, you would normally open your server's server.properties file
