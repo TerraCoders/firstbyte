@@ -2,6 +2,8 @@
 #include <string> //necessary for using strings
 #include <map> //necessary for mapping string values for switch function
 
+// $ g++ -o hello hello.cpp
+
 using namespace std;
 
 int main()
