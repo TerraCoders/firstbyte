@@ -1,6 +1,7 @@
 #include <iostream> //some sort of default include?
 #include <string> //necessary for using strings
 #include <map> //necessary for mapping string values for switch function
+#include <unistd.h>//necessary to acces Portable Operating System Interface (POSIX)
 
 // $ g++ -o hello hello.cpp
 
@@ -78,15 +79,35 @@ int main()
             cout << "Time to buy a kite!\n";
             break;
     }
-
+    // set array of 5 strings
     string foo [5] = {};
     cout << "Let's fill an array with the names of five animals...\n";
+    // y equals zero
     int y = 0;
+    // while y is less than 5
     while (y < 5) {
-        cout << "Animal number " << y << ": ";
+        // print prompt
+        cout << "Animal number " << y + 1 << ": ";
+        // and read input; as the loop increases y, each entry is stored as a string in our array
         cin >> foo[y];
+        // add 1 to y
         y++;
     }
+    // print the items in the array
     cout << "Your animals were: " << foo[0] << ", " << foo[1] << ", " << foo[2] << ", " << foo[3] << ", " << "and, " << foo[4] << ".\n";
+    // new string variable for the last/fifth item in the array
+    string animal = foo[4];
+    cout << animal[3] << " is the fourth letter in " << animal << ".\n";
+    cout << "this computer will explode in 4 seconds: \n";
+    for (int i = 0; i < 10; i++) {
+        if (i == 4) {
+            break;
+        }
+        //print i and add one
+        cout << i + 1 << "\n";
+        //sleep for one second
+        sleep(1);
+    }
+
     return 0;
 }
