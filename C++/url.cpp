@@ -13,48 +13,50 @@ using namespace std;
 
 int main() 
 {
+    // get $USER from shell
+    string myName = getenv("USER");
     // store targets for parsing in string variables
     string secureProtocol = "https://";
     string unsecureProtocol = "http://";
     // x will be counter for however many urls user wants to parse
     int x;
-    // i will be counter for loops
-    int i = 0;
-    cout << "How many URL's would you like to parse?\n";
+    // n will be counter for loops
+    int n = 0;
+    cout << "Hello " << myName << ". How many URL's would you like to parse?\n";
     cin >> x;
     // introduce url array with items equal to x
     string url [x] = {};
     // let user add items to the url array
-    while (i < x)
+    while (n < x)
     {
         cout << "URL: ";
-        cin >> url[i];
-        i++;
+        cin >> url[n];
+        n++;
     }
     // now, loop through the array and parse the urls
-    for (i = 0; i < x; i++)
+    for (n = 0; n < x; n++)
     {
-        // find secureProtocol string
-        auto targetOne = url[i].find(secureProtocol);
-        // find unsecureProtocol string
-        auto targetTwo = url[i].find(unsecureProtocol);
+        // find secureProtocol for nth string in url array
+        auto targetOne = url[n].find(secureProtocol);
+        // find unsecureProtocol for nth string in url array
+        auto targetTwo = url[n].find(unsecureProtocol);
         // basically, if targetOne does not not match?
         if (targetOne != string::npos)
         {
             // erase the match according to the size of the secureProtocol string
-            url[i].erase(targetOne,secureProtocol.size());
+            url[n].erase(targetOne,secureProtocol.size());
             // and print
-            cout << url[i] << "\n";
+            cout << url[n] << "\n";
         // otherwise... if targetTwo does not not match?
         } else if (targetTwo != string::npos)
         {
             // erase the match according to the size of the unsecureProtocol string
-            url[i].erase(targetTwo,unsecureProtocol.size());
+            url[n].erase(targetTwo,unsecureProtocol.size());
             // and print
-            cout << url[i] << "\n";
+            cout << url[n] << "\n";
         // and, if that fails...
         } else {
-            cout << "Didn't find a protocol for " << url[i] << ".\n";
+            cout << "Didn't find a protocol for " << url[n] << ".\n";
         }
     }
     
