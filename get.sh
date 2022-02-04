@@ -25,7 +25,7 @@ fi
 
 # grep xwininfo to determine whether an application has a window open
 isopen="$(xwininfo -root -children | grep -i $alias)"
-
+xdoname="Mozilla Firefox"
 # use wmctrl to find open FF windows
 ff="$(wmctrl -l | grep Firefox)"
 
@@ -33,15 +33,8 @@ ff="$(wmctrl -l | grep Firefox)"
 # will return empty string if $ff is only one line
 multi="$(echo "$ff" | sed -n '2 p')"
 
-# parse down to window name only
-# *********************************************************************************
-# MUST double check that cut is removing the right number of bytes for your shell!!
-# output should be window names ONLY!!
-# *********************************************************************************
-all="$(echo "$ff" | cut -b 27-)"
-
-# and number the output
-list="$(echo "$all" | nl)"
+# parse down to window title and number the output
+list="$(printf "$ff \n" | cut -b 30- | nl)"
 
 # if FF is requested, is running, and has multiple windows open
 if [ "$1" == ff ] && [ "$isopen" != "" ] && [ "$multi" != "" ]; then
@@ -52,7 +45,6 @@ if [ "$1" == ff ] && [ "$isopen" != "" ] && [ "$multi" != "" ]; then
   read -p "Enter a number: " num
 
   # search list for num with grep and parse again
-  # might need to double check cut again
   window="$(echo "$list" | grep $num | cut -b 8-)"
 
   # use parsed window name to get a window ID with xdotool
