@@ -10,7 +10,7 @@
 # ssh.txt formatting
 # ******************
 
-# You need to format your file in three columns, each column delimited with a single space.
+# You need to format your file in three columns, each column delimited with a SINGLE space.
 # First column: 'username@address'
 # Second column: ':/path/at/destination'
 # Third column: 'simple name or alias for destination' <-- just in case you have trouble recognizing addresses
@@ -39,10 +39,11 @@
 # store printed contents of ssh.txt
 src="$(cat ~/Scripts/src/ssh.txt)"
 
-[ -f "$1" ] && echo "Cannot use this command with a file. Please use the [scpx filename] command instead" && xdotool type "scpx $1" && exit
+# terminate the script if user is trying to use command on a directory
+[ -d "$1" ] && echo "Cannot use this command with a directory. Please use the [scpr filename] command instead" && xdotool type "scpr $1" && exit
 
 echo "Which host would you like to connect to? (select number)" | lolcat
-# parse src var for host names and to list numbered output
+# format src var and echo output
 host="$(echo "$src" | cut -d " " -f 1)"
 list="$(echo "$src" | cut -d " " -f 1,3)"
 echo "$list" | nl
@@ -66,11 +67,11 @@ whichpath="${paths[$num]}"
 #combine host and path into one var
 destination="$(echo $whichhost$whichpath)"
 
-dir="$(basename $1)"
+file="$(basename $1)"
 
-echo "Sending file $dir to $destination..."
+echo "Sending file $file to $destination..."
 
-# if VM (i.e., line 5 of ssh.txt) selected, add port option, otherwise no port option
+# if VM (6) selected, add port option, otherwise no port option
 # if no VM, or no connection via local port, REMOVE everything on this line up to and including the OR opperator
-[ "$line" == 5 ] && scp -P 2222 -r "$1" "$destination"/"$dir" || scp -r "$1" "$destination"/"$dir"
+[ "$line" == 6 ] && scp -P 2222 "$1" "$destination"/"$file" || scp "$1"  "$destination"/"$file"
 

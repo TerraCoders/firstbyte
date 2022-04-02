@@ -1,0 +1,5 @@
+username@example.com :~/uploads SomeSite1
+username@example.org :/path/to/uploads SomeSite2
+username@192.168.0.XX :~/Shared LocalHost1
+username@192.168.0.YY :~/Desktop LocalHost2
+username@127.0.0.1 :~/Desktop VirtualBoxVM
