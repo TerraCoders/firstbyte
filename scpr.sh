@@ -10,6 +10,8 @@
 # ssh.txt formatting
 # ******************
 
+# EXAMPLE: https://github.com/TerraCoders/firstbyte/blob/master/src/ssh.txt
+
 # You need to format your file in three columns, each column delimited with a single space.
 # First column: 'username@address'
 # Second column: ':/path/at/destination'
