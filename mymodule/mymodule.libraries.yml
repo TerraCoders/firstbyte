@@ -1,0 +1,6 @@
+mymodule:
+  version: 1.0.0
+  js: 
+    js/jsevents.js: {}
+  dependencies:
+    - core/jquery

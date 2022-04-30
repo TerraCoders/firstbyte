@@ -1,0 +1,15 @@
+<?php
+
+/*
+*
+* Implement hook_preprocess_page
+*
+*/
+
+function mymodule_preprocess_page(&$variables) {
+    // if page is <front>
+    if ($variables['is_front'] == TRUE) {
+        // attach our JS library
+        $variables['#attached']['library'][] = 'drupal_exercises_javascript/jsevents';
+    }
+}
